@@ -4,6 +4,23 @@
     require_once('partials/navbar.php');
 
 ?>
+<!-- Signup Form -->
+<div style="border: 1px solid black">
+    <h2>Signup</h2>
+    <form action="app/signup.php" method="POST">
+        <label>Username</label>
+        <input type="text" name="signup_username">
+
+        <label>Password</label>
+        <input type="password" name="signup_password">
+
+        <label>Retype Password</label>
+        <input type="password" name="signup_password_retype">
+
+        <input type="submit" value="Signup" name="signup_add">
+    </form>
+</div>
+
 <div style="border: 1px solid black">
     <h2>Add Project</h2>
     <form id="addProj" action="app/insert.php" method="POST">
