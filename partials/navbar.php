@@ -1,6 +1,6 @@
 <nav>
     <div>
-        <a href="../index.php">Project Tracker</a>
+        <a href=<?php echo siteURL(); ?>>Project Tracker</a>
     </div>
     <div>
         <a href="#">Dashboard</a>

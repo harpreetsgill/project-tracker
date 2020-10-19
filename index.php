@@ -1,4 +1,5 @@
 <?php
+    require_once('app/functions.php');
     require_once('partials/header.php');
     require_once('app/connect.php');
     require_once('partials/navbar.php');
