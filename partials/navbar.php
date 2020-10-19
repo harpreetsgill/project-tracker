@@ -7,4 +7,7 @@
         <a href="#">Profile</a>
         <a href="#">Settings</a>
     </div>
+    <div>
+        <a href=<?php echo SITE_URL . 'app/logout.php?logout=1'; ?>>Logout</a>
+    </div>
 </nav>

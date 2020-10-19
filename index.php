@@ -1,10 +1,19 @@
 <?php
+
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
     require_once('app/functions.php');
     require_once('partials/header.php');
     require_once('app/connect.php');
     require_once('partials/navbar.php');
 
+
+    // echo $_SESSION['user_username'];
 ?>
+
+
 
 <!-- Login Form -->
 <div style="border: 1px solid black">
@@ -36,6 +45,14 @@
         <input type="submit" value="Signup" name="signup_add">
     </form>
 </div>
+
+<?php if (isset(($_SESSION['user_id']))): ?>
+    <h1>Only for logged in user</h1>
+<?php else: ?>
+    <h1>For logged out</h1>
+<?php endif; ?>
+
+
 
 <div style="border: 1px solid black">
     <h2>Add Project</h2>

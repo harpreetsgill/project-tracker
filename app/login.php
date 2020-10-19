@@ -7,11 +7,11 @@
 
     If (isset($_POST['login_add'])) {
 
-        $username = $_POST['login_username'];
-        $password = $_POST['login_password'];
+        $username = sanitize($_POST['login_username']);
+        $password = sanitize($_POST['login_password']);
 
         if (empty($username) || empty($password)) {
-            echo 'Empty field(s)';
+            header('Location: ' . SITE_URL . '?error=EmptyFields');
         }
 
         $sql = 'SELECT * FROM users
@@ -20,22 +20,23 @@
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
-
         $userData = $result->fetch_assoc();
 
-        print_r($userData);
+        if (password_verify($password, $userData['user_password'])) {
+            if(session_start() == PHP_SESSION_NONE) {
+                session_start();
+            }
 
-        if ($username == $userData['user_username']) {
-            echo 'Username Match';
+            $_SESSION['user_id'] = $userData['user_id'];
+            header('Location: ' . SITE_URL . '?login=success');
         }
-
         else {
-            echo 'No Match';
+            header('Location: ' . SITE_URL . '?login=failure');
         }
-
     }
 
     else {
+        header('Location: ' . SITE_URL);
         die();
     }
 

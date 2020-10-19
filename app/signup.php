@@ -12,14 +12,8 @@
         $password = sanitize($_POST['signup_password']);
         $passwordAgain = sanitize($_POST['signup_password_retype']);
 
-        echo $username;
-        echo $password;
-        echo $passwordAgain;
-
         if(empty($username) || empty($password) || empty($passwordAgain)) {
             header('Location: ' . SITE_URL . '?error=emptyFields');
-        }
-        else {
             die();
         }
 
@@ -28,11 +22,25 @@
             die();
         }
 
+        $sql = 'SELECT * FROM users WHERE user_username = ?';
+        $stmt = $mysqli->prepare($sql);
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows) {
+            header('Location: ' . SITE_URL . '?error=userExists');
+            die();
+        }
+
         $sql = 'INSERT INTO users (user_username, user_password)
                 VALUES (?, ?)';
         $stmt = $mysqli->prepare($sql);
-        $stmt->bind_param('ss', $username, $password);
+        $stmt->bind_param('ss', $username, password_hash($password, PASSWORD_DEFAULT));
         $stmt->execute();
+
+        header('Location: ' . SITE_URL . "?error=success=1");
+        die();
     }
 
     else {
