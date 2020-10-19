@@ -14,7 +14,7 @@
 <!-- Login Form -->
 <div style="border: 1px solid black">
     <h2>Login</h2>
-    <form action="app/login.php" method="POST">
+    <form action="app/login.php" method="POST" cf-form>
         <label>Username</label>
         <input type="text" name="login_username">
 
