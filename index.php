@@ -9,11 +9,7 @@
     require_once('app/connect.php');
     require_once('partials/navbar.php');
 
-
-    // echo $_SESSION['user_username'];
 ?>
-
-
 
 <!-- Login Form -->
 <div style="border: 1px solid black">
