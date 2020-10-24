@@ -3,6 +3,7 @@
     require('../partials/header.php');
     require('../partials/navbar.php');
     require_once('connect.php');
+    require_once('functions.php');
 
     if ($_POST['proj_add']) {
 
