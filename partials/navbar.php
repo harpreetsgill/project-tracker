@@ -1,16 +1,13 @@
-<?php
-    // require('functions.php');
-?>
 <nav>
-    <!--
+    
     <div>
         <a href=
             <?php
-                // echo siteURL();
+                echo siteURL();
             ?>
         >Project Tracker</a>
     </div>
-    -->
+   
     <div>
         <a href="#">Dashboard</a>
         <a href="#">Profile</a>

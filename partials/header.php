@@ -6,6 +6,9 @@
 
     <title>Project Tracker</title>
 
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
