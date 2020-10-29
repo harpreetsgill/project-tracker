@@ -22,7 +22,7 @@
         </div>
     </header>
     <!-- Login Form -->
-    <div style="border: 1px solid black" id="login-form">
+    <div id="login-form">
         <h2>Login</h2>
         <form action="app/login.php" method="POST">
             <label>Username</label>
