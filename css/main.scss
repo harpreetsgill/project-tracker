@@ -1,0 +1,76 @@
+// Colors
+$colors: (
+    bg: #F7FFF7,
+    text: #212429,
+    placeholder: #ADB6BD
+);
+
+// Background Design
+$bg-img: (
+    green: url('../img/gr-bg.svg'),
+    orange: url('../img/or-bg.svg')
+);
+
+// Returns a color
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+};
+
+// Returns a background image
+@function bg-img($img) {
+    @return map-get($bg-img, $img)
+};
+
+body {
+    background-color: color(bg);
+    background-image: bg-img(green), bg-img(orange);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: -146.5px, 836.94px;
+    background-position-y: 54.74px, -175.63px;
+}
+
+#container {
+    background: olive;
+    width: 1088px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 16px;
+}
+
+header {
+    grid-column: 1/13;
+    display: flex;
+    align-items: center;
+    margin: 55px 0;
+
+    #logo {
+        display: flex;
+        align-items: center;
+
+        #h1-brandname {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+        }
+    }
+
+    #h2-subtitle {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 25px;
+        margin-left: 17px;
+    }
+
+    
+}
+
+
+#login-form {
+    grid-column: 2/6;
+}
+
+#signup-form {
+    grid-column: 8/12;
+}

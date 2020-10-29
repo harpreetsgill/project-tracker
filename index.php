@@ -22,7 +22,7 @@
         </div>
     </header>
     <!-- Login Form -->
-    <div style="border: 1px solid black">
+    <div style="border: 1px solid black" id="login-form">
         <h2>Login</h2>
         <form action="app/login.php" method="POST">
             <label>Username</label>
@@ -36,7 +36,7 @@
     </div>
 
     <!-- Signup Form -->
-    <div style="border: 1px solid black">
+    <div style="border: 1px solid black" id="signup-form">
         <h2>Signup</h2>
         <form action="app/signup.php" method="POST">
             <label>Username</label>
@@ -51,6 +51,7 @@
             <input type="submit" value="Signup" name="signup_add">
         </form>
     </div>
+</div>
 
     <?php if (isset(($_SESSION['user_id']))): ?>
         <h1>Only for logged in user</h1>
@@ -140,7 +141,6 @@
             endwhile;
         ?>
     </div>
-</div>
 <?php
     require_once('partials/footer.php');
 ?>

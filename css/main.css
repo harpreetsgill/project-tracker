@@ -1,0 +1,67 @@
+body {
+  background-color: #F7FFF7;
+  background-image: url("../img/gr-bg.svg"), url("../img/or-bg.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: -146.5px, 836.94px;
+  background-position-y: 54.74px, -175.63px;
+}
+
+#container {
+  background: olive;
+  width: 1088px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 16px;
+}
+
+header {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 55px 0;
+}
+
+header #logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #logo #h1-brandname {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+header #h2-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  margin-left: 17px;
+}
+
+#login-form {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-column: 2/6;
+}
+
+#signup-form {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 4;
+  grid-column: 8/12;
+}
+/*# sourceMappingURL=main.css.map */
