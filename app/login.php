@@ -28,7 +28,7 @@
             }
 
             $_SESSION['user_id'] = $userData['user_id'];
-            header('Location: ' . SITE_URL . '?login=success');
+            header('Location: ' . SITE_URL . 'dashboard.php' . '?login=success');
         }
         else {
             header('Location: ' . SITE_URL . '?login=failure');

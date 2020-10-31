@@ -69,6 +69,10 @@ header {
     align-items: center;
     margin: 55px 0;
 
+    a {
+        color: color(text);
+    }
+
     #logo {
         display: flex;
         align-items: center;
@@ -87,7 +91,6 @@ header {
         margin-left: 17px;
     }   
 }
-
 
 %form {
     background-color: $login-signup-bg-color;
@@ -153,3 +156,13 @@ header {
     @extend %form;
 }
 
+#div-courses {
+    grid-column: 1/5;
+    align-self: start;
+    @extend %form;
+}
+
+#main {
+    grid-column: 6/13;
+    @extend %form;
+}

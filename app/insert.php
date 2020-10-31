@@ -25,6 +25,8 @@
         $stmt->bind_param('ssssssss', $title, $desc, $startdate, $duedate, $duetime, $cat, $status, $priority);
         $stmt->execute();
 
+        header('Location: ' . SITE_URL . 'dashboard.php' . '?add=success');
+
     }
 
     else {
