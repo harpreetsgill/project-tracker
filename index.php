@@ -24,19 +24,17 @@
     
 
     <!-- Signup Form -->
-    <div style="border: 1px solid black" id="signup-form">
-        <h2>Signup</h2>
+    <div id="signup-form">
+        <h2>Signing up <br>
+        is <span>easy</span></h2>
         <form action="app/signup.php" method="POST">
-            <label>Username</label>
-            <input type="text" name="signup_username">
+            <input class="input-field" type="text" name="signup_username" placeholder="Username">
 
-            <label>Password</label>
-            <input type="password" name="signup_password">
+            <input class="input-field" type="password" name="signup_password" placeholder="Password">
 
-            <label>Retype Password</label>
-            <input type="password" name="signup_password_retype">
+            <input class="input-field" type="password" name="signup_password_retype"  placeholder="Retype Password">
 
-            <input type="submit" value="Signup" name="signup_add">
+            <input class="input-button" type="submit" value="Signup" name="signup_add">
         </form>
     </div>
 
@@ -45,13 +43,11 @@
         <h2>Logging in <br>
         is <span>easier</span></h2>
         <form action="app/login.php" method="POST">
-            <label>Username</label>
-            <input type="text" name="login_username">
+            <input class="input-field" type="text" name="login_username" placeholder="Username">
 
-            <label>Password</label>
-            <input type="password" name="login_password">
+            <input class="input-field" type="password" name="login_password" placeholder="Password">
 
-            <input type="submit" value="Login" name="login_add">
+            <input class="input-button" type="submit" value="Login" name="login_add">
         </form>
     </div>
 </div>
