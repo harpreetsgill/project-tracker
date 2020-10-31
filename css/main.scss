@@ -2,16 +2,10 @@
 
 // Colors
 $colors: (
-    bg: #F7FFF7,
+    light-green: #F7FFF7,
     white: #FFF,
     text: #212429,
     placeholder: #ADB6BD
-);
-
-// Background Design
-$bg-img: (
-    green: url('../img/gr-bg.svg'),
-    orange: url('../img/or-bg.svg')
 );
 
 // Returns a color
@@ -19,13 +13,37 @@ $bg-img: (
     @return map-get($colors, $color-name)
 };
 
+// Variables
+$body-bg-color: color(light-green);
+$login-signup-bg-color: color(white);
+
+// Background Design
+$bg-img: (
+    green: url('../img/gr-bg.svg'),
+    orange: url('../img/or-bg.svg')
+);
+
 // Returns a background image
 @function bg-img($img) {
     @return map-get($bg-img, $img)
 };
 
+// Typography
+$type-size: (
+    logo: 25px,
+    subtitle: 25px,
+    heading: 25px,
+    placeholder: 16px,
+    button: 16px,
+    body: 16px
+);
+
+@function font-size($size) {
+    @return map-get($type-size, $size)
+};
+
 body {
-    background-color: color(bg);
+    background-color: $body-bg-color;
     background-image: bg-img(green), bg-img(orange);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -55,14 +73,14 @@ header {
         #h1-brandname {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            font-size: 25px;
+            font-size: font-size(logo);
         }
     }
 
     #h2-subtitle {
         font-family: 'Poppins', sans-serif;
         font-weight: 400;
-        font-size: 25px;
+        font-size: font-size(subtitle);
         margin-left: 17px;
     }   
 }
@@ -70,10 +88,10 @@ header {
 
 #login-form {
     grid-column: 2/6;
-    background-color: color(white);
+    background-color: $login-signup-bg-color;
     padding: 76px;
 
-
+    
 }
 
 #signup-form {
