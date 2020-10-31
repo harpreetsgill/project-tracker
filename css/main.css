@@ -55,16 +55,16 @@ header #h2-subtitle {
 }
 
 #login-form {
-  -ms-grid-column: 2;
+  -ms-grid-column: 8;
   -ms-grid-column-span: 4;
-  grid-column: 2/6;
+  grid-column: 8/12;
   background-color: #FFF;
   padding: 76px;
 }
 
 #signup-form {
-  -ms-grid-column: 8;
+  -ms-grid-column: 2;
   -ms-grid-column-span: 4;
-  grid-column: 8/12;
+  grid-column: 2/6;
 }
 /*# sourceMappingURL=main.css.map */

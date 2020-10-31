@@ -21,19 +21,7 @@
             <h2 id="h2-subtitle">helps you keep track of your school projects</h2>
         </div>
     </header>
-    <!-- Login Form -->
-    <div id="login-form">
-        <h2>Login</h2>
-        <form action="app/login.php" method="POST">
-            <label>Username</label>
-            <input type="text" name="login_username">
-
-            <label>Password</label>
-            <input type="password" name="login_password">
-
-            <input type="submit" value="Login" name="login_add">
-        </form>
-    </div>
+    
 
     <!-- Signup Form -->
     <div style="border: 1px solid black" id="signup-form">
@@ -49,6 +37,21 @@
             <input type="password" name="signup_password_retype">
 
             <input type="submit" value="Signup" name="signup_add">
+        </form>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form">
+        <h2>Logging in <br>
+        is <span>easier</span></h2>
+        <form action="app/login.php" method="POST">
+            <label>Username</label>
+            <input type="text" name="login_username">
+
+            <label>Password</label>
+            <input type="password" name="login_password">
+
+            <input type="submit" value="Login" name="login_add">
         </form>
     </div>
 </div>

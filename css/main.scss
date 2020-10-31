@@ -87,13 +87,16 @@ header {
 
 
 #login-form {
-    grid-column: 2/6;
+    grid-column: 8/12;
     background-color: $login-signup-bg-color;
     padding: 76px;
 
-    
+    h2 {
+        font-size: $type-size(heading);
+        color: red;
+    }
 }
 
 #signup-form {
-    grid-column: 8/12;
+    grid-column: 2/6;
 }
