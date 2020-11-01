@@ -18,15 +18,23 @@
     <?php require_once('partials/navbar.php'); ?>
 
     <div id="div-courses">
-    <div class="div-section-head">
-        <h2>Courses</h2>
-        <a href="#">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 21 21" style="enable-background:new 0 0 21 21;" xml:space="preserve">
-            <polygon points="21,9 12,9 12,0 9,0 9,9 0,9 0,12 9,12 9,21 12,21 12,12 21,12 "/>
-            </svg>
-        </a>
-    </div>
+        <div class="div-section-head">
+            <h2>Courses</h2>
+            <a href="#">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 21 21" style="enable-background:new 0 0 21 21;" xml:space="preserve">
+                <polygon points="21,9 12,9 12,0 9,0 9,9 0,9 0,12 9,12 9,21 12,21 12,12 21,12 "/>
+                </svg>
+            </a>
+        </div>
+
+        <form id="addCourse" action="app/insert.php" method="POST">
+        
+            <input type="text" name="course_name" placeholder="Course Name">
+
+            <input type="submit" name="course_add" value="Add"></input>
+        
+        </form>
 
         <ul>
             <li>Typography 1</li>
@@ -44,7 +52,6 @@
         <a href="#" id="add-proj-plus" onclick="toggleView()">
             <svg id="svgsign" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 21 21" style="enable-background:new 0 0 21 21;" xml:space="preserve">
-            <!-- <polygon points="21,9 12,9 12,0 9,0 9,9 0,9 0,12 9,12 9,21 12,21 12,12 21,12 "/> -->
             <polygon points="21,9 12,9 12,0 9,0 9,9 0,9 0,12 9,12 9,21 12,21 12,12 21,12 "/>
             </svg>
         </a>
@@ -108,7 +115,7 @@
             <div class="div-btn-add">
                 <input id="btn-post-proj" type="submit" value="Add" name="proj_add"></input>
             </div>
-            </form>
+        </form>
     </div>
 
     <!-- Added Projects -->

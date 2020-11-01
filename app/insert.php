@@ -5,7 +5,23 @@
     require_once('connect.php');
     require_once('functions.php');
 
-    if ($_POST['proj_add']) {
+    if (isset($_POST['course_add'])) {
+        $course = $_POST['course_name'];
+
+        $sql = "INSERT INTO courses (course_name)
+            VALUES(?)";
+        
+        $stmt = $mysqli->prepare($sql);
+        $stmt->bind_param('s', $course);
+        $stmt->execute();
+
+        header('Location: ' . SITE_URL . 'dashboard.php' . '?addCourse=success');
+    }
+    else {
+        die();
+    }
+
+    if (isset($_POST['proj_add'])) {
 
         $title = $_POST['proj_title'];
         $desc = $_POST['proj_desc'];
@@ -25,14 +41,14 @@
         $stmt->bind_param('ssssssss', $title, $desc, $startdate, $duedate, $duetime, $cat, $status, $priority);
         $stmt->execute();
 
-        header('Location: ' . SITE_URL . 'dashboard.php' . '?add=success');
-
+        header('Location: ' . SITE_URL . 'dashboard.php' . '?addProj=success');
     }
-
     else {
-        echo 'Error Storing';
         die();
     }
+
+    
+
 ?>
 
 <?php
