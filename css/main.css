@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 body {
   background-color: #F7FFF7;
   background-image: url("../img/gr-bg.svg"), url("../img/or-bg.svg");
@@ -159,8 +159,69 @@ header #h2-subtitle {
 }
 
 #main {
-  -ms-grid-column: 6;
-  -ms-grid-column-span: 7;
-  grid-column: 6/13;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 8;
+  grid-column: 5/13;
+}
+
+.div-section-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.div-section-head h2 {
+  padding-bottom: 15px;
+  border-bottom: 2px solid #212429;
+}
+
+.div-section-head svg {
+  width: 21px;
+  height: 21px;
+  padding: 14px;
+  border: 1px solid #212429;
+}
+
+.div-section-head svg:hover {
+  fill: #FFF;
+  background-color: #212429;
+}
+
+.div-proj-box {
+  border: 1px solid #212429;
+  margin-bottom: 20px;
+}
+
+.div-proj-box .box-head {
+  background-color: #FE9A9A;
+  border-bottom: 1px solid #212429;
+  padding: 7px 16px;
+  font-weight: 600;
+}
+
+.div-proj-box .box-content {
+  padding: 11px 16px;
+}
+
+.div-proj-box .box-content .box-dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #495058;
+  margin-bottom: 20px;
+}
+
+.div-proj-box .box-content p {
+  font-size: 16px;
+  line-height: 22px;
 }
 /*# sourceMappingURL=main.css.map */

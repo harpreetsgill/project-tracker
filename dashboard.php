@@ -18,7 +18,15 @@
     <?php require_once('partials/navbar.php'); ?>
 
     <div id="div-courses">
+    <div class="div-section-head">
         <h2>Courses</h2>
+        <a href="#">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 21 21" style="enable-background:new 0 0 21 21;" xml:space="preserve">
+            <polygon points="21,9 12,9 12,0 9,0 9,9 0,9 0,12 9,12 9,21 12,21 12,12 21,12 "/>
+            </svg>
+        </a>
+    </div>
 
         <ul>
             <li>Typography 1</li>
@@ -29,9 +37,22 @@
     </div>
 
     <div id="main">
-    <div style="border: 1px solid black">
-        <h2>Add Project</h2>
-        <form id="addProj" action="app/insert.php" method="POST">
+    
+    
+    <div class="div-section-head">
+        <h2><span id="spn-add" style="display: inline; font-weight: 400;">Add </span>Project<span id="spn-s" style="display: inline; font-weight: 400;">s</span></h2>
+        
+        <a href="#" id="add-proj-plus" onclick="toggleView()">
+            <svg id="svgsign" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 21 21" style="enable-background:new 0 0 21 21;" xml:space="preserve">
+            <!-- <polygon points="21,9 12,9 12,0 9,0 9,9 0,9 0,12 9,12 9,21 12,21 12,12 21,12 "/> -->
+            <polygon points="21,9 12,9 12,0 9,0 9,9 0,9 0,12 9,12 9,21 12,21 12,12 21,12 "/>
+            </svg>
+        </a>
+    </div>
+
+    <div id="div-add-proj">
+        <form style="display: block;" id="addProj" action="app/insert.php" method="POST">
             <label for="projTitle">Title</label>
             <input type="text" id="projTitle" name="proj_title">
 
@@ -72,10 +93,9 @@
             <input type="submit" value="Add" name="proj_add"></input>
         </form>
     </div>
-    <br>
+
     <!-- Added Projects -->
-    <div style="border: 1px solid black">
-        <h2>Added Projects</h2>
+    <div>
         <?php
             $sql = 'SELECT * FROM projects';
 
@@ -93,16 +113,21 @@
 
 
         <?php
-                echo '<div style="border: 1px solid black">';
+                echo '<div class="div-proj-box">';
 
-                echo $row['proj_title'] . '<br>';   
-                echo $row['proj_startdate'] . ' | ';
-                echo $row['proj_duedate'] . ' - ';
-                echo $row['proj_duetime'] . '<br>';
-                echo $row['proj_cat_id'] . ' | '; 
-                echo $row['proj_status_id'] . ' | ';
-                echo $row['proj_prior_id'] . '<br>';
-                echo $row['proj_desc'];
+                    echo '<h4 class="box-head">' . $row['proj_title'] . '</h4>';  
+                    
+                    echo '<div class="box-content">';
+                        echo '<div class="box-dates">';
+                            echo '<h5>' . $row['proj_startdate'] . '</h5>';
+                            echo '<h5>' . $row['proj_duedate'] . '</h5>';
+                        echo '</div>';
+                        // echo $row['proj_duetime'] . '<br>';
+                        // echo $row['proj_cat_id'] . ' | '; 
+                        // echo $row['proj_status_id'] . ' | ';
+                        // echo $row['proj_prior_id'] . '<br>';
+                        echo '<p>' . $row['proj_desc'] . '</p>';
+                    echo '</div>';
                 
                 echo '</div>';
             

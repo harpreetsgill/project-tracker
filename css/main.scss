@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 // Colors
 $colors: (
@@ -6,7 +6,8 @@ $colors: (
     white: #FFF,
     text: #212429,
     placeholder: #ADB6BD,
-    button: #353A40
+    button: #353A40,
+    gray: #495058
 );
 
 // Returns a color
@@ -163,6 +164,67 @@ header {
 }
 
 #main {
-    grid-column: 6/13;
+    grid-column: 5/13;
     @extend %form;
+}
+
+.div-section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    h2 {
+        padding-bottom: 15px;
+        border-bottom: 2px solid color(text);
+    }
+
+    #spn-add {
+        font-weight: 400;
+        color: red;
+    }
+
+    svg {
+        width: 21px;
+        height: 21px;
+        padding: 14px;
+        border: 1px solid color(text);
+    }
+
+    svg:hover {
+        fill: color(white);
+        background-color: color(text);
+    }
+}
+
+.div-proj-box {
+    border: 1px solid color(text);
+    margin-bottom: 20px;
+
+    .box-head {
+        background-color: #FE9A9A;
+        border-bottom: 1px solid color(text);
+        padding: 7px 16px;
+        font-weight: 600;
+    }
+
+    .box-content {
+        padding: 11px 16px;
+
+        .box-dates {
+            display: flex;
+            justify-content: space-between;
+            color: color(gray);
+
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: text-size(body);
+            line-height: 22px;
+        }
+    }
+}
+
+#div-proj-add {
+    
 }

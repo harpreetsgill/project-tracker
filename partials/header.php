@@ -10,6 +10,8 @@
     <!-- <link rel="stylesheet" href="css/global.css"> -->
     <!-- <link rel="stylesheet" href="css/styles.css"> -->
     <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/script.js"></script>
 </head>
 <body>
 
