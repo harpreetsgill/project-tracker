@@ -40,8 +40,7 @@
     
     
     <div class="div-section-head">
-        <h2><span id="spn-add" style="display: inline; font-weight: 400;">Add </span>Project<span id="spn-s" style="display: inline; font-weight: 400;">s</span></h2>
-        
+        <h2><span id="spn-add" style="display: inline;">Add </span>Project<span id="spn-s">s</span></h2>
         <a href="#" id="add-proj-plus" onclick="toggleView()">
             <svg id="svgsign" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 21 21" style="enable-background:new 0 0 21 21;" xml:space="preserve">
@@ -51,47 +50,65 @@
         </a>
     </div>
 
-    <div id="div-add-proj">
-        <form style="display: block;" id="addProj" action="app/insert.php" method="POST">
-            <label for="projTitle">Title</label>
-            <input type="text" id="projTitle" name="proj_title">
+    <div id="div-add-proj" style="display: block;">
+        <form id="addProj" action="app/insert.php" method="POST">
 
-            <label for="projCat">Category</label>
-            <select name="proj_cat_id">
-                <option value="1">Not Started</option>
-                <option value="2">In Progress</option>
-                <option value="3">Completed</option>
-            </select>
+            <input type="text" id="projTitle" name="proj_title" placeholder="Project Title">
 
-            <label for="projStatus">Status</label>
-            <select name="proj_status_id">
-                <option value="1">Not Started</option>
-                <option value="2">In Progress</option>
-                <option value="3">Completed</option>
-            </select>
 
-            <label for="projPrior">Priority</label>
-            <select name="proj_prior_id">
-                <option value="1">Low</option>
-                <option value="2">Medium</option>
-                <option value="3">High</option>
-            </select>
+            <div class="div-add-proj-opts-1">
+                    
+                <div>
+                    <label for="projStartDate">Start Date</label>
+                    <input type="date" name="proj_startdate">
+                </div>
 
-            <br>
+                <div>
+                    <label for="projDueDateTime">Due Date</label>
+                    <input type="date" name="proj_duedate">
+                </div>
+                
+                <div>
+                    <label for="projDueDateTime">Time</label>
+                    <input type="time" name="proj_duetime">
+                </div>
+            </div>
 
-            <label for="projStartDate">Start Date</label>
-            <input type="date" name="proj_startdate">
+            <div class="div-add-proj-opts-2">
+                <div>
+                    <label for="projCat">Category</label>
+                    <select name="proj_cat_id">
+                        <option value="1">Not Started</option>
+                        <option value="2">In Progress</option>
+                        <option value="3">Completed</option>
+                    </select>
+                </div>
 
-            <label for="projDueDateTime">Due Date & Time</label>
-            <input type="date" name="proj_duedate"> <input type="time" name="proj_duetime">
+                <div>
+                    <label for="projStatus">Status</label>
+                    <select name="proj_status_id">
+                        <option value="1">Not Started</option>
+                        <option value="2">In Progress</option>
+                        <option value="3">Completed</option>
+                    </select>
+                </div>
 
-            <br>
+                <div>
+                    <label for="projPrior">Priority</label>
+                    <select name="proj_prior_id">
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">High</option>
+                    </select>
+                </div>
+            </div>
 
-            <label for="projDesc">About the project</label>
-            <textarea name="proj_desc"></textarea>
+            <textarea name="proj_desc" placeholder="Description"></textarea>
 
-            <input type="submit" value="Add" name="proj_add"></input>
-        </form>
+            <div class="div-btn-add">
+                <input id="btn-post-proj" type="submit" value="Add" name="proj_add"></input>
+            </div>
+            </form>
     </div>
 
     <!-- Added Projects -->

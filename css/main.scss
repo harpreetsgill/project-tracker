@@ -178,9 +178,8 @@ header {
         border-bottom: 2px solid color(text);
     }
 
-    #spn-add {
+    #spn-add, #spn-s {
         font-weight: 400;
-        color: red;
     }
 
     svg {
@@ -225,6 +224,119 @@ header {
     }
 }
 
-#div-proj-add {
+#div-add-proj {
+    border: 1px solid color(text);
+    margin-bottom: 20px;
+
+    #projTitle {
+        display: block;
+        width: calc(100% - 30px);
+        padding: 8px 15px;
+        border: none;
+        border-bottom: 1px solid color(text);
+        outline: none;
+        font: inherit;
+        font-weight: 600;
+    }
+
+    #projTitle::placeholder {
+        font-weight: 400;
+    }
+
+    .div-add-proj-opts-2 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        // padding: 8px 15px;
+        border-bottom: 1px solid color(text);
+
+        div {
+            border-right: 1px solid color(text);
+            padding: 0 5px;
+        }
+
+        div:nth-of-type(3n+3) {
+            border: none;
+        }
+
+        select {
+            font: inherit;
+            border: none;
+            outline: none;
+            color: color(placeholder);
+            // border-right: 1px solid color(text);
+            padding: 8px 0px;
+        }
+    }
     
+    .div-add-proj-opts-1 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        // padding: 8px 15px;
+        border-bottom: 1px solid color(text);
+
+        div {
+            border-right: 1px solid color(text);
+            padding: 0 15px;
+        }
+
+        div:nth-of-type(3n+3) {
+            border: none;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            padding: 8px 0px;
+        }
+
+        input::placeholder {
+            font: inherit;
+            color: color(placeholder);
+        }
+
+        input[type=date] {
+            width: 75px;
+        }
+
+        input[type=time] {
+            width: 75px;
+        }
+    }
+
+    textarea {
+        font: inherit;
+        padding: 15px;
+        width: calc(100% - 30px);
+        height: 189px;
+        border: none;
+        resize: none;
+        outline: none;
+    }
+
+    .div-btn-add {
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px;
+    }
+
+    #btn-post-proj {
+        border: none;
+        padding: 9px 21px;
+        font: inherit;
+        font-weight: 600;
+        text-transform: uppercase;
+        background-color: color(gray);
+        border: 1px solid color(gray);
+        color: color(white);
+        cursor: pointer;
+    }
+
+    #btn-post-proj:hover {
+        background-color: color(white);
+        color: color(gray);  
+    }
 }

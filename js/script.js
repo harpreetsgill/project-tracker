@@ -2,10 +2,10 @@
 
 function toggleView() {
     var btn = document.getElementById("add-proj-plus");
-    var form = document.getElementById("addProj");
+    var form = document.getElementById("div-add-proj");
     var svg = document.getElementById("svgsign");
     var spanAdd = document.getElementById("spn-add");
-    var spanS = document.getElementById("spn-add");
+    var spanS = document.getElementById("spn-s");
 
     if (form.style.display === "block") {
         form.style.display = "none";
