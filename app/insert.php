@@ -38,12 +38,13 @@
         if (isset($_POST['course_add'])) {
             $user_id = $_SESSION['user_id'];
             $course = $_POST['course_name'];
+            $color = $_POST['course_color_code'];
     
-            $sql = "INSERT INTO courses (course_name, course_user_id)
-                VALUES(?, ?)";
+            $sql = "INSERT INTO courses (course_name, course_color_code, course_user_id)
+                VALUES(?, ?, ?)";
             
             $stmt = $mysqli->prepare($sql);
-            $stmt->bind_param('ss', $course, $user_id);
+            $stmt->bind_param('sss', $course, $color, $user_id);
             $stmt->execute();
     
             header('Location: ' . SITE_URL . 'dashboard.php' . '?addCourse=success');
