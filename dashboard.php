@@ -31,22 +31,36 @@
         <form id="addCourse" action="app/insert.php" method="POST">
         
             <input type="text" name="course_name" placeholder="Course Name">
+            <input type="color">
 
             <input type="submit" name="course_add" value="Add"></input>
         
         </form>
 
-        <ul>
-            <li>Typography 1</li>
-            <li>Print Design</li>
-            <li>Creative Writing</li>
-            <li>Illustrations</li>
-        </ul>
+        <?php
+            $user_id = $_SESSION['user_id'];
+
+            $sql = 'SELECT * FROM courses
+                    WHERE courses.course_user_id = ?';
+
+            $stmt = $mysqli->prepare($sql);
+            $stmt->bind_param('i', $user_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            while($row = $result->fetch_assoc() ):
+        ?>
+
+        <?php
+            echo '<ul>';
+            echo '<li>' . $row['course_name'] . '</li>';
+            echo '</ul>';
+
+            endwhile;
+        ?>
     </div>
 
     <div id="main">
-    
-    
     <div class="div-section-head">
         <h2><span id="spn-add" style="display: inline;">Add </span>Project<span id="spn-s">s</span></h2>
         <a href="#" id="add-proj-plus" onclick="toggleView()">
@@ -121,15 +135,17 @@
     <!-- Added Projects -->
     <div>
         <?php
-            $sql = 'SELECT * FROM projects';
+            $user_id = $_SESSION['user_id'];
+
+            $sql = 'SELECT * FROM projects
+                    -- JOIN courses
+                    -- ON projects.proj_cat_id = 
+                    WHERE projects.proj_user_id = ?';
 
             $stmt = $mysqli->prepare($sql);
+            $stmt->bind_param('i', $user_id);
             $stmt->execute();
             $result = $stmt->get_result();
-
-            // $row = $result->fetch_assoc();
-            // echo $row['proj_title'];
-            // print_r($row);
 
             while($row = $result->fetch_assoc() ):
             
@@ -137,23 +153,23 @@
 
 
         <?php
-                echo '<div class="div-proj-box">';
+            echo '<div class="div-proj-box">';
 
-                    echo '<h4 class="box-head">' . $row['proj_title'] . '</h4>';  
-                    
-                    echo '<div class="box-content">';
-                        echo '<div class="box-dates">';
-                            echo '<h5>' . $row['proj_startdate'] . '</h5>';
-                            echo '<h5>' . $row['proj_duedate'] . '</h5>';
-                        echo '</div>';
-                        // echo $row['proj_duetime'] . '<br>';
-                        // echo $row['proj_cat_id'] . ' | '; 
-                        // echo $row['proj_status_id'] . ' | ';
-                        // echo $row['proj_prior_id'] . '<br>';
-                        echo '<p>' . $row['proj_desc'] . '</p>';
-                    echo '</div>';
+                echo '<h4 class="box-head">' . $row['proj_title'] . '</h4>';  
                 
+                echo '<div class="box-content">';
+                    echo '<div class="box-dates">';
+                        echo '<h5>' . $row['proj_startdate'] . '</h5>';
+                        echo '<h5>' . $row['proj_duedate'] . '</h5>';
+                    echo '</div>';
+                    // echo $row['proj_duetime'] . '<br>';
+                    // echo $row['proj_cat_id'] . ' | '; 
+                    // echo $row['proj_status_id'] . ' | ';
+                    // echo $row['proj_prior_id'] . '<br>';
+                    echo '<p>' . $row['proj_desc'] . '</p>';
                 echo '</div>';
+            
+            echo '</div>';
             
             endwhile;
         ?>
