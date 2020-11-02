@@ -90,7 +90,15 @@ header {
         font-weight: 400;
         font-size: text-size(subtitle);
         margin-left: 17px;
-    }   
+    } 
+    
+    #logged-user {
+        display: inline-block;
+        font-weight: 400;
+        font-size: text-size(subtitle);
+        margin-left: 17px;
+        text-align: right;
+    }
 }
 
 %form {
@@ -178,6 +186,7 @@ header {
             width: 10px;
             height: 10px;
             border-radius: 50%;
+            margin: auto 0;
         }
     }
 

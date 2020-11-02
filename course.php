@@ -58,12 +58,7 @@
             ?>
 
             <?php
-                echo
-                '<a href="course.php?course_code='. $row['course_color_code'] . '">' .
-                    '<li>' .              
-                        $row['course_name'] . '<span style="background-color:' . $row['course_color_code'] . ';"></span>' .                    
-                    '</li>' .
-                '</a>' ;
+                echo '<li>' . $row['course_name'] . '<span style="background-color:' . $row['course_color_code'] . ';"></span>' . '</li>';
                 endwhile;
             ?>
         </ul>
@@ -80,7 +75,7 @@
         </a>
     </div>
 
-    <div id="div-add-proj" style="display: block;">
+    <div id="div-add-proj" style="display: none;">
         <form id="addProj" action="app/insert.php" method="POST">
 
             <input type="text" id="projTitle" name="proj_title" placeholder="Project Title">
@@ -163,17 +158,18 @@
     <!-- Added Projects -->
     <div>
         <?php
-            $user_id = $_SESSION['user_id'];
+            // $user_id = $_SESSION['user_id'];
 
             $sql = 'SELECT * FROM projects
-                    -- JOIN courses
-                    -- ON projects.proj_cat_id = courses.course_color_code
-                    WHERE projects.proj_user_id = ?';
+                    JOIN courses
+                    ON projects.proj_course_code = courses.course_color_code
+                    -- WHERE projects.proj_user_id = ?
+                    WHERE projects.course_code = ' . $_GET['course_code'];
 
-            $stmt = $mysqli->prepare($sql);
-            $stmt->bind_param('i', $user_id);
-            $stmt->execute();
-            $result = $stmt->get_result();
+            // $stmt = $mysqli->prepare($sql);
+            // $stmt->bind_param('i', $user_id);
+            // $stmt->execute();
+            $result = $mysqli->query($sql);
 
             while($row = $result->fetch_assoc() ):
             

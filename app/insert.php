@@ -16,15 +16,13 @@
         $startdate = $_POST['proj_startdate'];
         $duedate = $_POST['proj_duedate'];
         $duetime = $_POST['proj_duetime'];
-        $cat = $_POST['proj_cat_id'];
+        $cat = $_POST['proj_course_code'];
         $status = $_POST['proj_status_id'];
         $priority = $_POST['proj_prior_id'];
         $user_id = $_SESSION['user_id'];
 
-        $sql = "INSERT INTO projects (proj_title, proj_desc, proj_startdate, proj_duedate, proj_duetime, proj_cat_id, proj_status_id, proj_prior_id, proj_user_id)
+        $sql = "INSERT INTO projects (proj_title, proj_desc, proj_startdate, proj_duedate, proj_duetime, proj_course_code, proj_status_id, proj_prior_id, proj_user_id)
             VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-        // INSERT INTO projects (proj_title, proj_desc, proj_startdate, proj_duedate, proj_duetime, proj_cat_id, proj_status_id, proj_prior_id) VALUES("Test Title", "Test Description", "2000-01-12", "2000-01-12", "10:00:00", 1, 2, 3)
 
         $stmt = $mysqli->prepare($sql);
         $stmt->bind_param('sssssssss', $title, $desc, $startdate, $duedate, $duetime, $cat, $status, $priority, $user_id);
