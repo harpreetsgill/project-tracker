@@ -59,7 +59,8 @@
 
             <?php
                 echo
-                '<a href="course.php?course_code='. $row['course_color_code'] . '">' .
+                '<a href="course.php?course_code='. 
+                substr($row['course_color_code'], 1) . '">' .
                     '<li>' .              
                         $row['course_name'] . '<span style="background-color:' . $row['course_color_code'] . ';"></span>' .                    
                     '</li>' .
@@ -187,7 +188,8 @@
                 
                 echo '<div class="box-content">';
                     echo '<div class="box-dates">';
-                        echo '<h5>' . $row['proj_startdate'] . '</h5>';
+                    $date = date_create($row['proj_startdate']);
+                        echo '<h5>' . date_format($date,"Y/m/d H:i:s") . '</h5>';
                         echo '<h5>' . $row['proj_duedate'] . '</h5>';
                     echo '</div>';
                     // echo $row['proj_duetime'] . '<br>';

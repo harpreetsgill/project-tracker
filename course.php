@@ -44,6 +44,7 @@
 
         <ul>
             <?php
+                
                 $user_id = $_SESSION['user_id'];
 
                 $sql = 'SELECT * FROM courses
@@ -160,18 +161,36 @@
         <?php
             // $user_id = $_SESSION['user_id'];
 
-            $sql = 'SELECT * FROM projects
-                    JOIN courses
-                    ON projects.proj_course_code = courses.course_color_code
-                    -- WHERE projects.proj_user_id = ?
-                    WHERE projects.course_code = ' . $_GET['course_code'];
+            // $sql = 'SELECT * FROM projects
+            //         JOIN courses
+            //         ON projects.proj_course_code = courses.course_color_code
+            //         -- WHERE projects.proj_user_id = ?
+            //         WHERE projects.course_code = ' . $_GET['course_code'];
 
-            // $stmt = $mysqli->prepare($sql);
-            // $stmt->bind_param('i', $user_id);
-            // $stmt->execute();
-            $result = $mysqli->query($sql);
+            // // $stmt = $mysqli->prepare($sql);
+            // // $stmt->bind_param('i', $user_id);
+            // // $stmt->execute();
+            // $result = $mysqli->query($sql);
 
-            while($row = $result->fetch_assoc() ):
+            // while($row = $result->fetch_assoc() ):
+
+                $user_id = $_SESSION['user_id'];
+
+                $colorcode = '#' .  $_GET['course_code'];
+                $sql = "SELECT * FROM projects
+                        JOIN courses
+                        ON projects.proj_course_code = courses.course_color_code
+                        WHERE projects.proj_course_code = " . '#' . $_GET['course_code'];
+
+                // $stmt = $mysqli->prepare($sql);
+                // $stmt->bind_param('i', $user_id);
+                // $stmt->execute();
+                // $result = $stmt->get_result();
+                $result = $mysqli->query($sql);
+
+                echo '#' .  $_GET['course_code'];
+
+                while($row = $result->fetch_assoc() ):
             
         ?>
 
