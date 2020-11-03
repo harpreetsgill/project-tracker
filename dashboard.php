@@ -184,7 +184,9 @@
         <?php
             echo '<div class="div-proj-box">';
 
-                echo '<h4 class="box-head"' . 'style="background-color:'. $row['proj_course_code'] . '">' . $row['proj_title'] . '</h4>';  
+                echo '<h4 class="box-head"' . 'style="background-color:'. $row['proj_course_code'] . '">' . $row['proj_title'] . '</h4>';
+
+                echo '<a href="app/delete.php?proj_id=' . $row['proj_id'] . '">Delete</a>';
                 
                 echo '<div class="box-content">';
                     echo '<div class="box-dates">';
