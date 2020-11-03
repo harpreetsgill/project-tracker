@@ -37,3 +37,8 @@ function toggleCourseView() {
     }    
 }
 
+function toggleEdit() {
+    console.log("edit");
+    document.getElementById("edit").style.display = "none";
+    document.getElementById("update").style.display = "inline";
+}

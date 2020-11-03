@@ -64,13 +64,14 @@
                         $row['course_color_code'] . ';"></span>' .
                         '<a class="del-link" href="app/delete.php?course_id=' . $row['course_id'] . '">X</a>' .
 
-                        '<a href="#"
-                        onclick="(function(){
-                            console.log(' . $row['course_id'] . ');
-                            document.getElementById(' . $row['course_id'] . ').contentEditable = ' . 'true' .
-                        '})();
+                        '<a id="edit" href="#"
+                            onclick="
+                                (function(){
+                                    console.log(' . $row['course_id'] . ');
+                                    document.getElementById(' . $row['course_id'] . ').contentEditable = ' . 'true' .
+                                '})(); toggleEdit();
                         ">Edit</a>' .
-                        
+                        '<a id="update" style="display: none;" onclick="toggleEdit()" href="app/update.php">Update</a>' .
                     '</li>' .
                 '</p>';
                 endwhile;
