@@ -34,6 +34,6 @@ function toggleCourseView() {
         form.style.display = "block";
         spanAdd.style.display = "inline";
         spanS.style.display = "none";
-    }
-    
+    }    
 }
+

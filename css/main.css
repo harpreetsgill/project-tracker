@@ -181,13 +181,17 @@ header #logged-user {
           justify-content: space-between;
 }
 
-#div-courses li span {
+#div-courses li .course-color-circle {
   display: inline-block;
   background-color: #555;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   margin: auto 0;
+}
+
+#div-courses .delCourse {
+  display: block;
 }
 
 #div-courses input[type=text] {

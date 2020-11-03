@@ -180,7 +180,7 @@ header {
         display: flex;
         justify-content: space-between;
 
-        span {
+        .course-color-circle {
             display: inline-block;
             background-color: #555;
             width: 10px;
@@ -188,6 +188,10 @@ header {
             border-radius: 50%;
             margin: auto 0;
         }
+    }
+
+    .delCourse {
+        display: block;
     }
 
     input[type=text] {

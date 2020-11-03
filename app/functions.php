@@ -19,4 +19,8 @@
         $tempTime = date_create($rawTime);
         return date_format($tempTime, "g:i a");
     }
+
+    function makeEditable() {
+        console.log("YES");
+    }
 ?>
