@@ -190,9 +190,9 @@
                 
                 echo '<div class="box-content">';
                     echo '<div class="box-dates">';
-                    $date = date_create($row['proj_startdate']);
-                        echo '<h5>' . date_format($date,"Y/m/d H:i:s") . '</h5>';
-                        echo '<h5>' . $row['proj_duedate'] . '</h5>';
+                    // $date = date_create($row['proj_startdate']);
+                        echo '<h5>' . dateFormat($row['proj_startdate']) . '</h5>';
+                        echo '<h5>' . dateFormat($row['proj_duedate']) . ' at ' . timeFormat($row['proj_duetime']) . '</h5>';
                     echo '</div>';
                     // echo $row['proj_duetime'] . '<br>';
                     // echo $row['proj_cat_id'] . ' | '; 
