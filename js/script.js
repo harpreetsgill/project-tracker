@@ -37,8 +37,16 @@ function toggleCourseView() {
     }    
 }
 
+// Using id
 function toggleEdit() {
     console.log("edit");
     document.getElementById("edit").style.display = "none";
     document.getElementById("update").style.display = "inline";
 }
+
+// Using class
+// function toggleEdit() {
+//     console.log("edit");
+//     document.getElementsByClassName("edit").style.display = "none";
+//     document.getElementsByClassName("update").style.display = "inline";
+// }

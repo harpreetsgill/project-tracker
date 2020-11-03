@@ -58,20 +58,25 @@
                 echo
                 '<p class="a-course" href="course.php?course_code='. 
                 substr($row['course_color_code'], 1) . '">' .
-                    '<li>' .              
-                        '<span id="' . $row['course_id'] . '" >' . $row['course_name'] . '</span>' .
+                    '<li>' .
+                        '<form action="app/update.php" 
+                        method="GET">' .
+
+                        '<span id="' . $row['course_id'] . '" name="course_name" >' . $row['course_name'] . '</span>' .
                         '<span class="course-color-circle" style="background-color:' .
                         $row['course_color_code'] . ';"></span>' .
                         '<a class="del-link" href="app/delete.php?course_id=' . $row['course_id'] . '">X</a>' .
 
-                        '<a id="edit" href="#"
+                        '<a id="edit-' . $row['course_id'] . '" href="#"
                             onclick="
                                 (function(){
                                     console.log(' . $row['course_id'] . ');
                                     document.getElementById(' . $row['course_id'] . ').contentEditable = ' . 'true' .
                                 '})(); toggleEdit();
                         ">Edit</a>' .
-                        '<a id="update" style="display: none;" onclick="toggleEdit()" href="app/update.php">Update</a>' .
+                        '<a id="update-' . $row['course_id'] . '" style="display: none;" onclick="toggleEdit()" href="app/update.php?course_id=' . $row['course_id'] . '">Update</a>' .
+                        '</form>' .
+
                     '</li>' .
                 '</p>';
                 endwhile;
