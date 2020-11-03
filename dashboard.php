@@ -72,7 +72,11 @@
                                 (function(){
                                     console.log(' . $row['course_id'] . ');
                                     document.getElementById(' . $row['course_id'] . ').contentEditable = ' . 'true' .
-                                '})(); toggleEdit();
+                                '})();
+                                (function(){
+                                    document.getElementById('. 'edit-' . $row['course_id'] .'").style.display = "none";
+                                })();  
+                                toggleEdit();
                         ">Edit</a>' .
                         '<a id="update-' . $row['course_id'] . '" style="display: none;" onclick="toggleEdit()" href="app/update.php?course_id=' . $row['course_id'] . '">Update</a>' .
                         '</form>' .
