@@ -22,7 +22,8 @@ $login-signup-bg-color: color(white);
 // Background Design
 $bg-img: (
     green: url('../img/gr-bg.svg'),
-    orange: url('../img/or-bg.svg')
+    orange: url('../img/or-bg.svg'),
+    both: url('../img/bg.svg')
 );
 
 // Returns a background image
@@ -46,12 +47,11 @@ $type-size: (
 
 body {
     background-color: $body-bg-color;
-    background-image: bg-img(green), bg-img(orange);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position-x: -146.5px, 836.94px;
-    background-position-y: 54.74px, -175.63px;
     font-family: 'Open Sans', sans-serif;
+    background-image: bg-img(both);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 54.74px;
 }
 
 #container {

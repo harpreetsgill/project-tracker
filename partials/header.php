@@ -14,4 +14,4 @@
     <script src="js/script.js"></script>
 </head>
 <body>
-
+<div id="div-bg"></div>
