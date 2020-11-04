@@ -183,6 +183,8 @@ header #logged-user {
 
 #div-courses li .course-color-circle {
   display: inline-block;
+  position: relative;
+  left: 10px;
   background-color: #555;
   width: 10px;
   height: 10px;
@@ -190,8 +192,25 @@ header #logged-user {
   margin: auto 0;
 }
 
-#div-courses .delCourse {
-  display: block;
+#div-courses .del-link {
+  position: relative;
+  right: -30px;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid red;
+  color: red;
+  padding: 4px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+}
+
+#div-courses .del-link:hover {
+  background-color: red;
+  color: #fff;
 }
 
 #div-courses input[type=text] {
@@ -307,6 +326,34 @@ header #logged-user {
 .div-proj-box .box-content p {
   font-size: 16px;
   line-height: 22px;
+}
+
+.div-proj-box .div-spd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 8px;
+}
+
+.div-proj-box .div-spd .a-spd {
+  display: block;
+  border: 1px solid #495058;
+  background-color: #495058;
+  color: #FFF;
+  padding: 5px 7px;
+  margin-left: 4px;
+}
+
+.div-proj-box .div-spd .a-spd:nth-child(3) {
+  background-color: #495058;
+}
+
+.div-proj-box .div-spd .a-spd:nth-child(3):hover {
+  color: #fff;
+  background-color: #EC5B2C;
 }
 
 #div-add-proj {

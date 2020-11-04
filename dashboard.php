@@ -32,7 +32,7 @@
         <form id="addCourse" action="app/insert.php" method="POST" style="display: block;">
             <input type="text" name="course_name" placeholder="Course Name">
             <div id="div-clr-btn">
-                <input type="color" name="course_color_code">
+                <input type="color" name="course_color_code" value="#FC9877">
 
                 <input type="submit" name="course_add" value="Add">
             </div>      
@@ -56,54 +56,16 @@
 
             <?php
                 echo
-                '<p class="a-course" href="course.php?course_code='. 
-                substr($row['course_color_code'], 1) . '">' .
                     '<li>' .
-                        '<form action="app/update.php" 
-                        method="GET">' .
-
                         '<span id="' . $row['course_id'] . '" name="course_name" >' . $row['course_name'] . '</span>' .
-                        '<span class="course-color-circle" style="background-color:' .
+                        '<span><span class="course-color-circle" style="background-color:' .
                         $row['course_color_code'] . ';"></span>' .
-                        '<a class="del-link" href="app/delete.php?course_id=' . $row['course_id'] . '">X</a>' .
-
-                        '<a id="'. 'edit-' . $row['course_id'] . '" href="#"
-                            onclick="
-                                (function(){
-                                    console.log(' . $row['course_id'] . ');
-                                    document.getElementById(' . $row['course_id'] . ').contentEditable = ' . 'true' .
-                                '})();
-                                (function(){
-                                    document.getElementById('. '"edit-' . $row['course_id'] .'").style.display = "none";' .
-                                '})();
-                        ">Edit</a>' .
-
-                        '<a id="update-' . $row['course_id'] . '" style="display: none;" onclick="toggleEdit()" href="app/update.php?course_id=' . $row['course_id'] . '">Update</a>' .
-                        
-                        '</form>' .
-
-                    '</li>' .
-                '</p>';
+                        '<a class="del-link" href="app/delete.php?course_id=' . $row['course_id'] . '">X</a></span>' .
+                    '</li>';
                 endwhile;
-                // echo '<script>
-                //         function makeEditable() {
-                //             console.log("YES");
-                //             document.getElementById("' . $row['course_id'] . '").contentEditable = "true";
-                //         }
-                //     </script>
-                // ';
             ?>
         </ul>
     </div>
-
-    <!-- <script>
-        document.getElementsByClassName("a-course").addEventListener("mouseover", delCourseView);
-
-        function delCourseView() {
-            delbtn = document.getElementsByClassName("del-link");
-            delbtn.style.color = "red";
-        }
-    </script> -->
 
     <!-- Projects Container -->
     <div id="main">
@@ -174,7 +136,6 @@
                     <select name="proj_status_id">
                         <option value="1">Not Started</option>
                         <option value="2">In Progress</option>
-                        <option value="3">Completed</option>
                     </select>
                 </div>
 
@@ -221,16 +182,42 @@
         <?php
             echo '<div class="div-proj-box">';
 
-                echo '<h4 class="box-head"' . 'style="background-color:'. $row['proj_course_code'] . '">' . $row['proj_title'] . '</h4>';
-                echo '<a href="app/delete.php?proj_id=' . $row['proj_id'] . '">Delete</a>';                
+                echo '<h4 class="box-head"' . 'style="background-color:'. $row['proj_course_code'] . '">' . $row['proj_title'] . '</h4>';              
                 echo '<div class="box-content">';
                     echo '<div class="box-dates">';
                         echo '<h5>' . dateFormat($row['proj_startdate']) . '</h5>';
                         echo '<h5>' . dateFormat($row['proj_duedate']) . ' at ' . timeFormat($row['proj_duetime']) . '</h5>';
                     echo '</div>';
-                    // echo $row['proj_status_id'] . ' | ';
-                    // echo $row['proj_prior_id'] . '<br>';
                     echo '<p>' . $row['proj_desc'] . '</p>';
+                echo '</div>';
+
+                // Status, Priority and Delete container
+                echo '<div class="div-spd">';
+                    // Status
+                    echo '<a class="a-spd" ';
+                        if ($row['proj_prior_id'] == 1) {
+                            echo 'style="background-color: #999;">Not Started';
+                        }
+                        elseif ($row['proj_status_id'] == 2) {
+                            echo 'style="background-color: #222;">In Progress';
+                        }
+                    echo '</a>';
+
+                    // Priority
+                    echo '<a class="a-spd" ';
+                        if ($row['proj_prior_id'] == 1) {
+                            echo 'style="background-color: green;">Low';
+                        }
+                        elseif ($row['proj_prior_id'] == 2) {
+                            echo 'style="background-color: blue;">Medium';
+                        }
+                        elseif ($row['proj_prior_id'] == 3) {
+                            echo 'style="background-color: red;">High';
+                        }
+                    echo '</a>';
+                    
+
+                    echo '<a class="a-spd" href="app/delete.php?proj_id=' . $row['proj_id'] . '">Delete</a>';
                 echo '</div>';
             
             echo '</div>';
@@ -240,7 +227,7 @@
     </div>
     </div>
     <?php else:
-        echo '<h1>Your are not logged in</h1>';
+        header('Location: ' . SITE_URL . '?error=userNotLoggedIn');
     ?>
     <?php endif; ?>
 
