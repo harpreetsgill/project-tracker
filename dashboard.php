@@ -67,18 +67,19 @@
                         $row['course_color_code'] . ';"></span>' .
                         '<a class="del-link" href="app/delete.php?course_id=' . $row['course_id'] . '">X</a>' .
 
-                        '<a id="edit-' . $row['course_id'] . '" href="#"
+                        '<a id="'. 'edit-' . $row['course_id'] . '" href="#"
                             onclick="
                                 (function(){
                                     console.log(' . $row['course_id'] . ');
                                     document.getElementById(' . $row['course_id'] . ').contentEditable = ' . 'true' .
                                 '})();
                                 (function(){
-                                    document.getElementById('. 'edit-' . $row['course_id'] .'").style.display = "none";
-                                })();  
-                                toggleEdit();
+                                    document.getElementById('. '"edit-' . $row['course_id'] .'").style.display = "none";' .
+                                '})();
                         ">Edit</a>' .
+
                         '<a id="update-' . $row['course_id'] . '" style="display: none;" onclick="toggleEdit()" href="app/update.php?course_id=' . $row['course_id'] . '">Update</a>' .
+                        
                         '</form>' .
 
                     '</li>' .
