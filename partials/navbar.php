@@ -27,7 +27,7 @@
 
                     $row = $result->fetch_assoc();
 
-                    echo '<h2 id="logged-user">Hello ' . $row['user_username'] . '</h2>';
+                    echo '<h2 id="logged-user">Hello ' . $row['user_username'] . '</h2>' . '<a href="' . SITE_URL . 'settings.php">Settings</a>';
                 }
             }
         ?>  

@@ -20,7 +20,7 @@
     <?php include 'partials/courses.php'; ?>
 
     <!-- Projects Container -->
-    <?php include 'partials/projects.php'; ?>
+    <?php include 'partials/settings-container.php'; ?>
 
     <?php else:
         header('Location: ' . SITE_URL . '?error=userNotLoggedIn');
