@@ -513,4 +513,32 @@ header #logged-user {
   background-color: #FFF;
   color: #495058;
 }
+
+#form-settings {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: auto;
+  grid-column-gap: 16px;
+}
+
+#form-settings label {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  padding-top: 12px;
+}
+
+#form-settings input {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 4;
+  grid-column: 4/8;
+}
+
+#form-settings input[type=submit] {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+}
 /*# sourceMappingURL=main.css.map */

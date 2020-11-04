@@ -458,3 +458,23 @@ header {
         color: color(gray);  
     }
 }
+
+#form-settings {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: auto;
+    grid-column-gap: 16px;
+    
+    label {
+        grid-column: 1/4;
+        padding-top: 12px;
+    }
+
+    input {
+        grid-column: 4/8;
+    }
+
+    input[type=submit] {
+        grid-column: 1/4;
+    }
+}
