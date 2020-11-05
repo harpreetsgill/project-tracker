@@ -1,9 +1,9 @@
 <?php
-    $user = 'root';
-    $password = 'root';
-    $db = 'projtracker';
+    $user = '*****';
+    $password = '*****';
+    $db = '*******';
     $host = 'localhost';
-    $port = 8889;
+    $port = 3306;
 
     $mysqli = new mysqli($host, $user, $password, $db, $port);
 
