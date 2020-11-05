@@ -20,6 +20,8 @@
             die();
         }
 
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
         $sql = 'SELECT * FROM users WHERE user_username = ?';
         $stmt = $mysqli->prepare($sql);
         $stmt->bind_param('s', $username);
@@ -31,22 +33,18 @@
             die();
         }
 
-        $sql = 'INSERT INTO users (user_username, user_password, user_password_again)
-                VALUES (?, ?, ?)';
+        $sql = 'INSERT INTO users (user_username, user_password)
+                VALUES (?, ?)';
         $stmt = $mysqli->prepare($sql);
-        $stmt->bind_param('sss', $username, password_hash($password, PASSWORD_DEFAULT), password_hash($passwordAgain, PASSWORD_DEFAULT));
+        $stmt->bind_param('ss', $username, $password);
         $stmt->execute();
 
-        
-        session_start();
-        
-
-        header('Location: ' . SITE_URL . 'dashboard.php' . "?signup=success");
+        header('Location: ' . SITE_URL . '?signup=success');
         die();
     }
 
     else {
-        echo 'if stmt not working';
+        die();
     }
 
 ?>

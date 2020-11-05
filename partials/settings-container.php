@@ -18,6 +18,9 @@
         <input class="input-field" type="password" name="user_new_password_retype">
 
         <input class="input-button" type="submit" value="Change" name="btn-change">
+
     </form>
+
+    <a href="app/logout.php?logout=1" class="input-button" style="background-color: #EC2C2C; margin-top: 30px;">Logout</>
 
 </div>

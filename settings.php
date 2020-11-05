@@ -19,7 +19,7 @@
     <!-- Courses Container -->
     <?php include 'partials/courses.php'; ?>
 
-    <!-- Projects Container -->
+    <!-- Settings Container -->
     <?php include 'partials/settings-container.php'; ?>
 
     <?php else:
