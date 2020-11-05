@@ -1,8 +1,8 @@
 <?php
-    $user = 'root';
-    $password = 'root';
-    $db = 'projtracker';
-    $host = 'https://gillharpreet.com';
+    $user = 'gillh013_hariya';
+    $password = 'nemoda4timtim';
+    $db = 'gillh013_projtracker';
+    $host = 'localhost:3306';
     $port = 8889;
 
     $mysqli = new mysqli($host, $user, $password, $db, $port);
