@@ -2,8 +2,8 @@
     $user = 'gillh013_hariya';
     $password = 'nemoda4timtim';
     $db = 'gillh013_projtracker';
-    $host = 'localhost:3306';
-    $port = 8889;
+    $host = 'localhost';
+    $port = 3306;
 
     $mysqli = new mysqli($host, $user, $password, $db, $port);
 
