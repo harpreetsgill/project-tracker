@@ -1,6 +1,6 @@
 <?php
 
-    if(session_status() == PHP_SESSION_NONE) {
+    if(session_status() === 1) {
         session_start();
     }
 
@@ -33,14 +33,12 @@
         $update_record->bind_param('ss', $new_username, password_hash($new_password, PASSWORD_DEFAULT));
         $update_record->execute();
 
-        echo 'if chaleya';
         header('Location: ' . SITE_URL . 'settings.php' . '?settings=success');
-
 
     }
 
     else {
-        echo 'else chaley';
+        die();
     }
 
 ?>

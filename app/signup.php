@@ -26,7 +26,7 @@
         $stmt = $mysqli->prepare($sql);
         $stmt->bind_param('s', $username);
         $stmt->execute();
-        $result = $stmt->get_result();
+        $result = $stmt->fetch();
 
         if ($result->num_rows) {
             header('Location: ' . SITE_URL . '?error=userExists');

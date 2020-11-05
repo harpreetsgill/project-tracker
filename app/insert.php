@@ -1,11 +1,9 @@
 <?php
 
-    if(session_status() == PHP_SESSION_NONE) {
+    if(session_status() === 1) {
         session_start();
     }
 
-    require('../partials/header.php');
-    // require('../partials/navbar.php');
     require_once('connect.php');
     require_once('functions.php');
 
@@ -27,8 +25,6 @@
         $stmt = $mysqli->prepare($sql);
         $stmt->bind_param('sssssssss', $title, $desc, $startdate, $duedate, $duetime, $cat, $status, $priority, $user_id);
         $stmt->execute();
-
-        echo 'if working';
 
         header('Location: ' . SITE_URL . 'dashboard.php' . '?addProj=success');
     }

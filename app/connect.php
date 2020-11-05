@@ -1,7 +1,7 @@
 <?php
-    $user = 'gillh013_hariya';
-    $password = 'nemoda4timtim';
-    $db = 'gillh013_projtracker';
+    $user = '*****';
+    $password = '*****';
+    $db = '*******';
     $host = 'localhost';
     $port = 3306;
 

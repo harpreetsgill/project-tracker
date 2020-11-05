@@ -1,8 +1,5 @@
 <?php
     require_once('functions.php');
-    require('../partials/header.php');
-    require('../partials/navbar.php');
-
     require_once('connect.php');
 
     If (isset($_POST['login_add'])) {
@@ -12,6 +9,7 @@
 
         if (empty($username) || empty($password)) {
             header('Location: ' . SITE_URL . '?error=EmptyFields');
+            die();
         }
 
         $sql = 'SELECT * FROM users
@@ -23,7 +21,7 @@
         $userData = $result->fetch_assoc();
 
         if (password_verify($password, $userData['user_password'])) {
-            if(session_start() == PHP_SESSION_NONE) {
+            if(session_status() === 1) {
                 session_start();
             }
 
@@ -39,5 +37,4 @@
         header('Location: ' . SITE_URL);
         die();
     }
-
 ?>
