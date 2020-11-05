@@ -2,7 +2,7 @@
     $user = 'root';
     $password = 'root';
     $db = 'projtracker';
-    $host = 'localhost';
+    $host = 'https://gillharpreet.com';
     $port = 8889;
 
     $mysqli = new mysqli($host, $user, $password, $db, $port);
