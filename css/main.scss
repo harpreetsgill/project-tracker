@@ -67,6 +67,7 @@ body {
 header {
     grid-column: 1/13;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin: 55px 0;
 
@@ -79,6 +80,7 @@ header {
         align-items: center;
 
         #h1-brandname {
+            // display: block;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             font-size: text-size(logo);
@@ -93,12 +95,24 @@ header {
     } 
     
     #logged-user {
-        display: inline-block;
         font-weight: 400;
         font-size: text-size(subtitle);
         margin-left: 17px;
-        text-align: right;
+
     }
+
+    
+}
+
+#div-username-setting {
+    display: flex;
+    align-items: center;
+}
+
+#a-setting img {
+    padding: 15px 17px;
+    border-bottom: 3px solid color(text);
+    margin-left: 20px;
 }
 
 %form {

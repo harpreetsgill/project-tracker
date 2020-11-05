@@ -29,6 +29,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -62,11 +65,24 @@ header #h2-subtitle {
 }
 
 header #logged-user {
-  display: inline-block;
   font-weight: 400;
   font-size: 25px;
   margin-left: 17px;
-  text-align: right;
+}
+
+#div-username-setting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#a-setting img {
+  padding: 15px 17px;
+  border-bottom: 3px solid #212429;
+  margin-left: 20px;
 }
 
 #signup-form, #login-form, #div-courses, #main {
