@@ -12,6 +12,7 @@
 
         if (empty($username) || empty($password)) {
             header('Location: ' . SITE_URL . '?error=EmptyFields');
+            die();
         }
 
         $sql = 'SELECT * FROM users
