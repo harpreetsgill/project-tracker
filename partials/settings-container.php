@@ -7,8 +7,6 @@
 
     <!-- Main Settings -->
     <form id="form-settings" method="POST" action="app/update-settings.php">
-        <label>Name</label>
-        <input class="input-field" type="text">
 
         <label>Username</label>
         <input class="input-field" type="text" name="user_new_username">
@@ -17,7 +15,7 @@
         <input class="input-field" type="password" name="user_new_password">
 
         <label>Retype Password</label>
-        <input class="input-field" type="password">
+        <input class="input-field" type="password" name="user_new_password_retype">
 
         <input class="input-button" type="submit" value="Change" name="btn-change">
     </form>

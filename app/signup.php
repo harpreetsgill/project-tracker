@@ -1,8 +1,6 @@
 <?php
 
     require_once('functions.php');
-    require('../partials/header.php');
-    require('../partials/navbar.php');
     require_once('connect.php');
 
 
@@ -33,13 +31,17 @@
             die();
         }
 
-        $sql = 'INSERT INTO users (user_username, user_password)
-                VALUES (?, ?)';
+        $sql = 'INSERT INTO users (user_username, user_password, user_password_again)
+                VALUES (?, ?, ?)';
         $stmt = $mysqli->prepare($sql);
-        $stmt->bind_param('ss', $username, password_hash($password, PASSWORD_DEFAULT));
+        $stmt->bind_param('sss', $username, password_hash($password, PASSWORD_DEFAULT), password_hash($passwordAgain, PASSWORD_DEFAULT));
         $stmt->execute();
 
-        header('Location: ' . SITE_URL . "?error=success=1");
+        
+        session_start();
+        
+
+        header('Location: ' . SITE_URL . 'dashboard.php' . "?signup=success");
         die();
     }
 

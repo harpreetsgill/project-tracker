@@ -11,8 +11,8 @@
 
     if (isset($_POST['proj_add'])) {
 
-        $title = $_POST['proj_title'];
-        $desc = $_POST['proj_desc'];
+        $title = sanitize($_POST['proj_title']);
+        $desc = sanitize($_POST['proj_desc']);
         $startdate = $_POST['proj_startdate'];
         $duedate = $_POST['proj_duedate'];
         $duetime = $_POST['proj_duetime'];
@@ -35,8 +35,8 @@
     else {
         if (isset($_POST['course_add'])) {
             $user_id = $_SESSION['user_id'];
-            $course = $_POST['course_name'];
-            $color = $_POST['course_color_code'];
+            $course = sanitize($_POST['course_name']);
+            $color = sanitize($_POST['course_color_code']);
     
             $sql = "INSERT INTO courses (course_name, course_color_code, course_user_id)
                 VALUES(?, ?, ?)";
